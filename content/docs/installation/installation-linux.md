@@ -36,10 +36,11 @@ There are packages available for different distros:
 
 - **[openSUSE](https://software.opensuse.org/package/flameshot):** `zypper install flameshot`
 
-- **[Void Linux](https://github.com/voidlinux/void-packages/tree/master/srcpkgs/flameshot):** `xbps-install flameshot`
+- **[Void Linux](https://github.com/void-linux/void-packages/tree/master/srcpkgs/flameshot):** `xbps-install flameshot`
 
 - **[Solus](https://dev.getsol.us/source/flameshot/):** `eopkg install flameshot`
 
+- **[ALT](https://packages.altlinux.org/en/sisyphus/srpms/flameshot/):** `su - -c "apt-get install flameshot"`
 
 
 If you want to run Flameshot with the most cutting edge features, you can
@@ -54,13 +55,14 @@ download a development version from [here](../development-build) or use AUR if y
 
 In addition, we also have continuous integration, it currently provides the following packages which can be accessed via our [GitHub release page](https://github.com/flameshot-org/flameshot/releases):
 
-- Debian10 (buster)
-- Ubuntu18.04 (bionic)
-- Ubuntu20.04 (focal)
-- Fedora31
-- Fedora32
+- Debian12 (bookworm)
+- Ubuntu22.04 (jammy)
+- Ubuntu24.04 (nobel)
+- Fedora41
+- Fedora42
+<!---
 - OpenSUSE Leap 15.2
-
+-->
 General packages (AppImage, snap, and Flatpak): they can run on common Linux-based operating systems, such as RHEL, CentOS, openSUSE, SLED, Ubuntu, Fedora, Debian and derivatives.
 
 <details>
@@ -70,9 +72,16 @@ General packages (AppImage, snap, and Flatpak): they can run on common Linux-bas
   </a>
 </details>
 
+There is also continuous integration for ARM architectures:
+- ARM64
+  - Debian 12 (bookworm)
+  - Ubuntu 22.04 (jammy)
+  - Ubuntu 24.04 (nobel)
+- ARMhf (ARM hard float)
+  - Debian 12 (bookworm)
+
 
 -------------------------------------------------
-
 ## Distro-Agnostic
 
 ### AppImage
@@ -151,7 +160,7 @@ To update the snap applications on your computer, you should run `snap refresh`.
 
 ### Flatpak  <img src="https://img.shields.io/flathub/downloads/org.flameshot.Flameshot">
 
-Flameshot is not currently on Flathub, but it will be there soon and the information here will be updated accordingly. For now you can install the Flatpak from the github release:
+Flameshot can be installed through Flathub with the following command:
 
 ```sh
 flatpak install flathub org.flameshot.Flameshot
@@ -193,32 +202,32 @@ There is also a docker image available for those who want it (**not** maintained
 ### Debian
 
 ```sh
-libqt5dbus5, libqt5network5, libqt5core5a, libqt5widgets5, libqt5gui5
+libkf6guiaddons-dev libqt6dbus6 libqt6network6 libqt6core6 libqt6widgets6 libqt6gui6 libqt6svg6 qt6-qpa-plugins
 ```
 Optional:
 
 ```sh
-openssl, ca-certificates
+openssl ca-certificates qt6-image-formats-plugins
 ```
 
 ### Fedora
 ```sh
-qt5-qtbase
+qt6-qtbase qt6-qtsvg kf6-kguiaddons
 ```
 
 Optional:
 
 ```sh
-openssl, ca-certificates
+openssl ca-certificates qt6-qtimageformats
 ```
 
 ### Arch
 
 ```sh
-qt5-base
+qt6-svg
 ```
 Optional:
 
 ```sh
-openssl, ca-certificates
+openssl ca-certificates qt6-imageformats
 ```
